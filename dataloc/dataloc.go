@@ -56,7 +56,7 @@ func L6(name string) string {
 
 func loc(value string, step int) (string, error) {
 	_, file, line, _ := runtime.Caller(step)
-	log.Printf("Caller Step %d: %s %d", step, file, line")
+	log.Printf("Caller Step %d: %s %d", step, file, line)
 	cwd, err := os.Getwd()
 	if err != nil {
 		return "", err
