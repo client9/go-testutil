@@ -49,10 +49,14 @@ func L5(name string) string {
 	return s
 }
 
+func L6(name string) string {
+	s, _ := loc(name, 6)
+	return s
+}
 
 func loc(value string, step int) (string, error) {
 	_, file, line, _ := runtime.Caller(step)
-
+	log.Printf("Caller Step %d: %s %d", step, file, line")
 	cwd, err := os.Getwd()
 	if err != nil {
 		return "", err
