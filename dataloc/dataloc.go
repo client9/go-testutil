@@ -36,14 +36,17 @@ func L(name string) string {
 
 func L3(name string) string {
 	s, _ := loc(name, 3)
+	return s
 }
 
 func L4(name string) string {
 	s, _ := loc(name, 4)
+	return s
 }
 
 func L5(name string) string {
 	s, _ := loc(name, 5)
+	return s
 }
 
 
