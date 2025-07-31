@@ -30,12 +30,25 @@ import (
 //
 // See Example.
 func L(name string) string {
-	s, _ := loc(name)
+	s, _ := loc(name, 2)
 	return s
 }
 
-func loc(value string) (string, error) {
-	_, file, line, _ := runtime.Caller(2)
+func L3(name string) string {
+	s, _ := loc(name, 3)
+}
+
+func L4(name string) string {
+	s, _ := loc(name, 4)
+}
+
+func L5(name string) string {
+	s, _ := loc(name, 5)
+}
+
+
+func loc(value string, step int) (string, error) {
+	_, file, line, _ := runtime.Caller(step)
 
 	cwd, err := os.Getwd()
 	if err != nil {
